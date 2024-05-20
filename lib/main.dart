@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:testapp/constants.dart';
 import 'package:testapp/view/Aspirated.dart';
 import 'package:testapp/view/MatchingWord.dart';
+import 'package:testapp/view/congrats.dart';
 import 'package:testapp/view/dialogue.dart';
 import 'package:testapp/view/introview.dart';
+import 'package:testapp/view/mcquestions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,13 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
+        // home: MultipleChoiceTest(
+        //   word: '冬',
+        //   options: ['d', 'k', 'b', 't'],
+        //   correctIndex: 0,
+        //   imageAddress: 'assets/images/winter.jpg',
+        //   route: '/module1-9',
+        // ),
         home: const MyHomePage(title: '粵拼教學'),
         routes: {
           '/intro-route': (context) => const IntroPage(),
@@ -27,7 +36,16 @@ class MyApp extends StatelessWidget {
           '/module1-2': (context) => matchingGameBP,
           '/module1-3': (context) => matchingGameDT,
           '/module1-4': (context) => matchingGameGK,
-          '/module1-5': (context) => FillInTheBlanks(),
+          '/module1-5': (context) => dialogue1,
+          '/module1-6': (context) => dialogue2,
+          '/module1-7': (context) => dialogue3,
+          '/module1-8': (context) => mc1,
+          '/module1-9': (context) => mc2,
+          '/module1-10': (context) => mc3,
+          '/module1-11': (context) => mc4,
+          '/module1-12': (context) => mc5,
+          '/module1-13': (context) => mc6,
+          '/module1-14': (context) => CelebrationPage(),
         });
   }
 }
@@ -64,16 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   '學 識 粵 拼 ，可 以 用 粵 拼 輸 入 法 嚟 打 粵 語 ，作 爲 最 自 然 簡 單 嘅 打 字 方 式',
                   style: const TextStyle(fontSize: 15)),
             ),
-            // const Padding(
-            //   padding: EdgeInsets.all(20.0),
-            //   child: Text(
-            //       '學hok6 識sik1 粵jyut6 拼ping3 可ho2 以ji5 幫bong1 助zo6 糾dau2 正zing3 懶laan5 音jam1 錯co3 音jam1，規kwai1 範faan6 自zi6 己gei2 嘅ge3 粵jyut6 語jyu5 口hau2 音jam1'),
-            // ),
-            // const Padding(
-            //   padding: EdgeInsets.all(40.0),
-            //   child: Text(
-            //       '學hok6 普pou2 通tung1 話waa2 要jiu3 學hok6 普pou2 通tung1 話waa2 拼ping3 音jam1，學hok6 粵jyut6 語jyu5 就zau6 要jiu3 學hok6 粵jyut6 拼ping3。'),
-            // ),
             TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/intro-route');

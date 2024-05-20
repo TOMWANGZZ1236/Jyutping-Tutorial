@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   audioplayers: ^6.0.0
+  lottie: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,7 @@ flutter:
   assets:
     - assets/sound/
     - assets/images/
+    - assets/lottie/celebration.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

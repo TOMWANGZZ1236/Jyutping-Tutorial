@@ -23,32 +23,6 @@ class MatchingGame extends StatefulWidget {
 
 class _MatchingGameState extends State<MatchingGame> {
   final player = AudioPlayer();
-  Map<String, String> wordSound = {
-    '爸': 'sound/baa4.mp3',
-    '爬': 'sound/paa4.mp3',
-    '怕': 'sound/paa3.mp3',
-    '白': 'sound/baak6.mp3',
-    '婆': 'sound/po4.mp3',
-    '布': 'sound/bou3.mp3',
-  };
-
-  Map<String, String> words = {
-    '爸': 'B',
-    '爬': 'P',
-    '怕': 'P',
-    '白': 'B',
-    '婆': 'P',
-    '布': 'B',
-  };
-
-  Map<String, bool> matched = {
-    '爸': false,
-    '爬': false,
-    '怕': false,
-    '白': false,
-    '婆': false,
-    '布': false,
-  };
 
   String? selectedWord;
   String? selectedLetter;

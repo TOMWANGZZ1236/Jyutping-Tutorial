@@ -1,4 +1,6 @@
 import 'package:testapp/view/MatchingWord.dart';
+import 'package:testapp/view/dialogue.dart';
+import 'package:testapp/view/mcquestions.dart';
 
 MatchingGame matchingGameBP = MatchingGame(
   wordSound: {
@@ -85,4 +87,86 @@ MatchingGame matchingGameGK = MatchingGame(
   },
   letters: ['G', 'K'],
   route: '/module1-5',
+);
+
+FillInTheBlanks dialogue1 = FillInTheBlanks(
+  text1: '你今日食咗啲乜嘢？',
+  text2: '我今日食咗',
+  draggables: ['b', 'p', 'd', 't', 'g', 'k'],
+  text3: '蘋果',
+  text4: 'ing',
+  correctAnswer: ['p', 'g'],
+  text5: 'wo',
+  imageAddress: 'assets/images/apple.webp',
+  route: '/module1-6',
+);
+
+FillInTheBlanks dialogue2 = FillInTheBlanks(
+  text1: '你最鍾意食乜嘢小食呀？',
+  text2: '我最鍾意食',
+  draggables: ['b', 'p', 'd', 't', 'g', 'k'],
+  text3: '蛋撻',
+  text4: 'aan',
+  correctAnswer: ['d', 't'],
+  text5: 'aat',
+  imageAddress: 'assets/images/eggtart.webp',
+  route: '/module1-7',
+);
+
+FillInTheBlanks dialogue3 = FillInTheBlanks(
+  text1: '你最鍾意邊個歌手？',
+  text2: '我最鍾意陳',
+  draggables: ['b', 'p', 'd', 't', 'g', 'k'],
+  text3: '百強',
+  text4: 'aak',
+  correctAnswer: ['b', 'k'],
+  text5: 'oeng',
+  imageAddress: 'assets/images/DannyChan.webp',
+  route: '/module1-8',
+);
+
+MultipleChoiceTest mc1 = MultipleChoiceTest(
+  word: '冬',
+  options: ['d', 'k', 'b', 't'],
+  correctIndex: 0,
+  imageAddress: 'assets/images/winter.jpg',
+  route: '/module1-9',
+);
+MultipleChoiceTest mc2 = MultipleChoiceTest(
+  word: '八',
+  options: ['g', 'k', 'b', 'p'],
+  correctIndex: 2,
+  imageAddress: 'assets/images/eight.png',
+  route: '/module1-10',
+);
+MultipleChoiceTest mc3 = MultipleChoiceTest(
+  word: '聽',
+  options: ['d', 'k', 'b', 't'],
+  correctIndex: 3,
+  imageAddress: 'assets/images/listen.jpg',
+  route: '/module1-11',
+);
+
+MultipleChoiceTest mc4 = MultipleChoiceTest(
+  word: '抱',
+  options: ['b', 'p', 'd', 't'],
+  correctIndex: 1,
+  imageAddress: 'assets/images/hug.jpeg',
+  route: '/module1-12',
+);
+
+MultipleChoiceTest mc5 = MultipleChoiceTest(
+  word: '狗',
+  options: ['g', 'k', 'd', 't'],
+  correctIndex: 0,
+  imageAddress: 'assets/images/dog.jpg',
+  route: '/module1-13',
+);
+
+MultipleChoiceTest mc6 = MultipleChoiceTest(
+  word: '琴',
+  options: ['g', 'k', 'd', 't'],
+  correctIndex: 1,
+  imageAddress: 'assets/images/piano.png',
+  route: '/module1-14',
 );
