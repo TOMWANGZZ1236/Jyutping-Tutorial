@@ -4,7 +4,7 @@ import 'package:testapp/view/Aspirated.dart';
 import 'package:testapp/view/MatchingWord.dart';
 import 'package:testapp/view/congrats.dart';
 import 'package:testapp/view/dialogue.dart';
-import 'package:testapp/view/introview.dart';
+import 'package:testapp/view/introView.dart';
 import 'package:testapp/view/mcquestions.dart';
 
 void main() {
