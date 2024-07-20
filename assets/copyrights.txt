@@ -1,0 +1,10 @@
+Copyrights Info for Images:
+    apple.webp -> unsplash https://unsplash.com/photos/five-honeycrisp-apples-on-table-9_5z24t0DFA
+    eggtart.webp -> unsplash https://unsplash.com/photos/brown-cupcakes-on-silver-tray-odX7I9pFFTU
+    DannyChan.jpeg -> https://www.pinterest.com/search/pins/?q=danny%20chan%20%E9%99%B3%E7%99%BE%E5%BC%B7&rs=guide&sourceModuleId=OB_danny_chan_%E9%99%B3%E7%99%BE%E5%BC%B7_d272967b-4ebb-4cf5-b699-d100ba732445&journeyDepth=1&add_refine=%E9%99%B3%E7%99%BE%E5%BC%B7%7Cguide%7Cword%7C2
+    dog.jpg -> unsplash https://unsplash.com/photos/two-brown-and-white-dogs-running-dirt-road-during-daytime-T-0EW-SEbsE
+    eight.png -> https://en.m.wikipedia.org/wiki/File:%E5%85%AB-bigseal.svg
+    hug.jpg -> https://unsplash.com/photos/man-and-woman-hugging-each-other-photography-9vHPCKymSh0
+    listen.jpg -> https://www.pexels.com/photo/photo-of-a-man-listening-music-on-his-phone-846741/
+    piano.png ->  https://www.pexels.com/photo/close-up-photo-of-person-playing-piano-1246437/
+    winter.jpg -> https://www.pexels.com/photo/landscape-photography-of-snow-pathway-between-trees-during-winter-688660/

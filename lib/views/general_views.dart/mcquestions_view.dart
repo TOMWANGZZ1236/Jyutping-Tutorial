@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
-import 'package:testapp/widgets.dart/TextWithSoundIcon.dart';
+import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
 import 'package:testapp/utilities_functions.dart/general_dialogue.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
@@ -10,6 +10,7 @@ class MultipleChoiceTest extends StatefulWidget {
   final int correctIndex;
   final String imageAddress;
   final String route;
+  final String soundPath;
 
   MultipleChoiceTest({
     Key? key,
@@ -17,6 +18,7 @@ class MultipleChoiceTest extends StatefulWidget {
     required this.options,
     required this.correctIndex,
     required this.imageAddress,
+    required this.soundPath,
     required this.route,
   }) : super(key: key);
 
@@ -75,7 +77,7 @@ class _MultipleChoiceTestState extends State<MultipleChoiceTest> {
           ),
           TextWithSoundIcon(
             text: widget.word,
-            soundPath: 'sound/baat3.mp3',
+            soundPath: widget.soundPath,
             alphaText: null,
             onActivated: (activated) {},
             width: 0,

@@ -1,30 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:testapp/constants/theme_constants.dart';
-import 'package:testapp/widgets.dart/TextWithSoundIcon.dart';
+import 'package:testapp/interface/json_interface.dart';
+import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
 class AspiratedInitials extends StatefulWidget {
-  const AspiratedInitials({super.key});
+  final LessonView view;
+  final String introTitle;
+  const AspiratedInitials(
+      {super.key, required this.view, required this.introTitle});
 
   @override
   State<AspiratedInitials> createState() => _AspiratedInitialsState();
 }
 
 class _AspiratedInitialsState extends State<AspiratedInitials> {
-  List<bool> checkboxStates = [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ]; // Track checkbox states
+  late final List<LiteralSection> literalSections;
+  late final List<SoundSection> soundSections;
+  late final List<bool> checkboxStates2;
+  late final List<bool> checkboxStates1;
+
+  @override
+  initState() {
+    literalSections = widget.view.literalSections;
+    soundSections = widget.view.soundSections;
+    checkboxStates2 = [
+      false,
+      false,
+      false,
+    ];
+    checkboxStates1 = [
+      false,
+      false,
+      false,
+    ];
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('送氣音💨💨'),
+          title: Text(widget.introTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold)),
           actions: <Widget>[
             CustomExitIconButton(
               context: context,
@@ -35,20 +58,20 @@ class _AspiratedInitialsState extends State<AspiratedInitials> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Text('\n➡️ p, t, k 有很強的噴氣；\n➡️ b, d, g 不噴氣，也不震動聲帶。\n',
+              child: Text(literalSections[0].description,
                   style: Theme.of(context).textTheme.bodyLarge),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Text('請跟著下面的發音，感受一下送氣的感覺\n',
+              child: Text(literalSections[1].description,
                   style: Theme.of(context)
                       .textTheme
-                      .bodyMedium!
+                      .titleMedium!
                       .copyWith(fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text('❌送氣🤐：',
+              child: Text(literalSections[2].description,
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
@@ -57,50 +80,26 @@ class _AspiratedInitialsState extends State<AspiratedInitials> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TextWithSoundIcon(
-                  text: "百",
-                  soundPath: 'sound/baat3.mp3',
-                  alphaText: 'b',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[0] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
-                TextWithSoundIcon(
-                  text: "島",
-                  soundPath: "sound/dou2.mp3",
-                  alphaText: 'd',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[1] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
-                TextWithSoundIcon(
-                  text: "家",
-                  soundPath: "sound/gaa1.mp3",
-                  alphaText: 'g',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[2] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
+                ...soundSections[0].soundElements.asMap().entries.map(
+                      (soundElement) => TextWithSoundIcon(
+                        text: soundElement.value.text,
+                        soundPath: soundElement.value.soundPath,
+                        alphaText: soundElement.value.alphaText,
+                        onActivated: (activated) {
+                          setState(() {
+                            checkboxStates1[soundElement.key] = activated;
+                          });
+                        },
+                        width: 30,
+                        height: 30,
+                        fontWeight: false,
+                      ),
+                    )
               ],
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text('送氣💨：',
+              child: Text(literalSections[3].description,
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
@@ -109,50 +108,27 @@ class _AspiratedInitialsState extends State<AspiratedInitials> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TextWithSoundIcon(
-                  text: "拍",
-                  soundPath: "sound/paak3.mp3",
-                  alphaText: 'p',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[3] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
-                TextWithSoundIcon(
-                  text: "土",
-                  soundPath: "sound/tou2.mp3",
-                  alphaText: 't',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[4] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
-                TextWithSoundIcon(
-                  text: "卡",
-                  soundPath: "sound/kaa1.mp3",
-                  alphaText: 'k',
-                  onActivated: (activated) {
-                    setState(() {
-                      checkboxStates[5] = activated;
-                    });
-                  },
-                  width: 30,
-                  height: 30,
-                  fontWeight: false,
-                ),
+                ...soundSections[1].soundElements.asMap().entries.map(
+                      (soundElement) => TextWithSoundIcon(
+                        text: soundElement.value.text,
+                        soundPath: soundElement.value.soundPath,
+                        alphaText: soundElement.value.alphaText,
+                        onActivated: (activated) {
+                          setState(() {
+                            checkboxStates2[soundElement.key] = activated;
+                          });
+                        },
+                        width: 30,
+                        height: 30,
+                        fontWeight: false,
+                      ),
+                    )
               ],
             ),
             const SizedBox(height: 25.0),
-            if (checkboxStates.every(
-                (state) => state)) // Check if all checkboxes are activated
+            if (checkboxStates1.every((state) => state) &&
+                checkboxStates2.every(
+                    (state) => state)) // Check if all checkboxes are activated
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/module1-2');

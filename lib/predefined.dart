@@ -115,13 +115,13 @@ FillInTheBlanks dialogue2 = FillInTheBlanks(
 
 FillInTheBlanks dialogue3 = FillInTheBlanks(
   text1: '你最鍾意邊個歌手？',
-  text2: '我最鍾意陳百強',
+  text2: '我最鍾意陳百強，佢唱歌好好聽㗎',
   draggables: ['b', 'p', 'd', 't', 'g', 'k'],
   text3: '百強',
   text4: 'aak',
   correctAnswer: ['b', 'k'],
   text5: 'oeng',
-  imageAddress: 'assets/images/DannyChan.webp',
+  imageAddress: 'assets/images/DannyChan.jpeg',
   route: '/module1-8',
 );
 
@@ -131,6 +131,7 @@ MultipleChoiceTest mc1 = MultipleChoiceTest(
   correctIndex: 0,
   imageAddress: 'assets/images/winter.jpg',
   route: '/module1-9',
+  soundPath: 'sound/dung1.mp3',
 );
 MultipleChoiceTest mc2 = MultipleChoiceTest(
   word: '八',
@@ -138,6 +139,7 @@ MultipleChoiceTest mc2 = MultipleChoiceTest(
   correctIndex: 2,
   imageAddress: 'assets/images/eight.png',
   route: '/module1-10',
+  soundPath: 'sound/baat3.mp3',
 );
 MultipleChoiceTest mc3 = MultipleChoiceTest(
   word: '聽',
@@ -145,14 +147,16 @@ MultipleChoiceTest mc3 = MultipleChoiceTest(
   correctIndex: 3,
   imageAddress: 'assets/images/listen.jpg',
   route: '/module1-11',
+  soundPath: 'sound/teng1.mp3',
 );
 
 MultipleChoiceTest mc4 = MultipleChoiceTest(
   word: '抱',
   options: ['b', 'p', 'd', 't'],
   correctIndex: 1,
-  imageAddress: 'assets/images/hug.jpeg',
+  imageAddress: 'assets/images/hug.jpg',
   route: '/module1-12',
+  soundPath: 'sound/pou5.mp3',
 );
 
 MultipleChoiceTest mc5 = MultipleChoiceTest(
@@ -161,6 +165,7 @@ MultipleChoiceTest mc5 = MultipleChoiceTest(
   correctIndex: 0,
   imageAddress: 'assets/images/dog.jpg',
   route: '/module1-13',
+  soundPath: 'sound/gau2.mp3',
 );
 
 MultipleChoiceTest mc6 = MultipleChoiceTest(
@@ -169,4 +174,5 @@ MultipleChoiceTest mc6 = MultipleChoiceTest(
   correctIndex: 1,
   imageAddress: 'assets/images/piano.png',
   route: '/module1-14',
+  soundPath: 'sound/kam4.mp3',
 );

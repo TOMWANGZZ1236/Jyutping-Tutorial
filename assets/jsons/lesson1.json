@@ -1,0 +1,61 @@
+{
+  "lessonTitle": "第一堂：b,d,g,p,t,k 送氣音",
+  "views": [
+    {
+      "literalSections": [
+        {
+          "description": "\n➡️ p, t, k 有很強的噴氣；\n➡️ b, d, g 不噴氣，也不震動聲帶。\n"
+        },
+        {
+          "description": "請跟著下面的發音，感受一下送氣的感覺\n"
+        },
+        {
+          "description": "❌送氣🤐："
+        },
+        {
+          "description": "送氣💨："
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "百",
+              "soundPath": "sound/baat3.mp3",
+              "alphaText": "b"
+            },
+            {
+              "text": "島",
+              "soundPath": "sound/dou2.mp3",
+              "alphaText": "d"
+            },
+            {
+              "text": "家",
+              "soundPath": "sound/gaa1.mp3",
+              "alphaText": "g"
+            }
+          ]
+        },
+        {
+          "soundElements": [
+            {
+              "text": "拍",
+              "soundPath": "sound/paak3.mp3",
+              "alphaText": "p"
+            },
+            {
+              "text": "土",
+              "soundPath": "sound/tou2.mp3",
+              "alphaText": "t"
+            },
+            {
+              "text": "卡",
+              "soundPath": "sound/kaa1.mp3",
+              "alphaText": "k"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

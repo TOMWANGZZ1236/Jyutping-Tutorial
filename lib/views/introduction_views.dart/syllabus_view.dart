@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/interface/json_interface.dart';
+import 'package:testapp/views/module1_views.dart/aspirated_view.dart';
 
 class SyllabusPage extends StatefulWidget {
   const SyllabusPage({super.key});
@@ -26,8 +28,20 @@ class _SyllabusPageState extends State<SyllabusPage> {
             child: ListTile(
               title: Text('第一堂：b,d,g,p,t,k 送氣音',
                   style: Theme.of(context).textTheme.bodyMedium),
-              onTap: () {
-                Navigator.pushNamed(context, '/module1-1');
+              onTap: () async {
+                Lesson lesson = await loadLesson();
+                LessonView lesson1View1 = lesson.views.first;
+                String lesson1Title = lesson.lessonTitle;
+                // Navigator.pushNamed(context, '/module1-1');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AspiratedInitials(
+                      view: lesson1View1,
+                      introTitle: lesson1Title,
+                    ),
+                  ),
+                );
               },
             ),
           ),

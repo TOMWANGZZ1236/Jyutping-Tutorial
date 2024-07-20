@@ -115,7 +115,7 @@ class _MyAppState extends State<MyApp> {
       fontFamily: 'ChironHeiHK',
       textTheme: textTheme.copyWith(
           bodySmall: bodySmall.copyWith(color: darkGreyColor)),
-      iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.white),
+      iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.black),
       textButtonTheme: textButtonTheme(Brightness.light),
       elevatedButtonTheme: elevatedButtonTheme(Brightness.light),
       dividerColor: dividerColor(Brightness.light),
@@ -168,7 +168,7 @@ class _MyAppState extends State<MyApp> {
         // ),
         routes: {
           '/syllabus-route': (context) => const SyllabusPage(),
-          '/module1-1': (context) => const AspiratedInitials(),
+          // '/module1-1': (context) => const AspiratedInitials(),
           '/module1-2': (context) => matchingGameBP,
           '/module1-3': (context) => matchingGameDT,
           '/module1-4': (context) => matchingGameGK,
