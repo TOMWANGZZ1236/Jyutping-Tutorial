@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:testapp/constants/theme_constants.dart';
 import 'package:testapp/interface/json_interface.dart';
 import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
 import 'package:testapp/widgets.dart/back_main.dart';

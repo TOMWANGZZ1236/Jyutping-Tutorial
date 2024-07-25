@@ -29,7 +29,14 @@ class TextWithSoundIcon extends StatefulWidget {
 class _TextWithSoundIconState extends State<TextWithSoundIcon> {
   bool isSoundPlayed = false;
 
-  final player = AudioPlayer();
+  late final AudioPlayer player;
+
+  @override
+  void initState() {
+    player = AudioPlayer();
+    super.initState();
+  }
+
   @override
   void dispose() {
     player.dispose();

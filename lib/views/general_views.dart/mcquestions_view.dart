@@ -1,7 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
 import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
-import 'package:testapp/utilities_functions.dart/general_dialogue.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
 class MultipleChoiceTest extends StatefulWidget {
@@ -29,6 +29,17 @@ class MultipleChoiceTest extends StatefulWidget {
 class _MultipleChoiceTestState extends State<MultipleChoiceTest> {
   int? selectedIndex;
   bool? isCorrect;
+  late final AudioPlayer player;
+
+  @override
+  void initState() {
+    player = AudioPlayer();
+    super.initState();
+  }
+
+  void playSound() async {
+    player.play(AssetSource(widget.soundPath));
+  }
 
   void _answerQuestion(int index) {
     setState(() {
@@ -75,14 +86,9 @@ class _MultipleChoiceTestState extends State<MultipleChoiceTest> {
               ),
             ],
           ),
-          TextWithSoundIcon(
-            text: widget.word,
-            soundPath: widget.soundPath,
-            alphaText: null,
-            onActivated: (activated) {},
-            width: 0,
-            height: 0,
-            fontWeight: true,
+          IconButton(
+            onPressed: playSound,
+            icon: const Icon(Icons.volume_up),
           ),
           ...widget.options.asMap().entries.map((entry) {
             int idx = entry.key;
