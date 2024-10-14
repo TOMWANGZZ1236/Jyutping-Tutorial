@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
 import 'package:testapp/home_page_view.dart';
-import 'package:testapp/predefined.dart';
 import 'package:testapp/views/general_views.dart/congrats_view.dart';
-import 'package:testapp/views/general_views.dart/dialogue_view.dart';
 import 'package:testapp/views/introduction_views.dart/syllabus_view.dart';
 
 late final ThemeData lightTheme;
