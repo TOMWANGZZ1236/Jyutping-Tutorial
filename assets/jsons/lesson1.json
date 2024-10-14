@@ -1,7 +1,8 @@
 {
-  "lessonTitle": "第一堂：b,d,g,p,t,k 送氣音",
   "views": [
     {
+      "viewTitle": "第一堂：b,d,g,p,t,k 送氣音",
+      "route" : "/module1-2",
       "literalSections": [
         {
           "description": "\n➡️ p, t, k 有很強的噴氣；\n➡️ b, d, g 不噴氣，也不震動聲帶。\n"
@@ -20,18 +21,18 @@
         {
           "soundElements": [
             {
-              "text": "百",
-              "soundPath": "sound/baat3.mp3",
+              "text": "八",
+              "soundPath": ["sound/baat3.mp3"],
               "alphaText": "b"
             },
             {
               "text": "島",
-              "soundPath": "sound/dou2.mp3",
+              "soundPath": ["sound/dou2.mp3"],
               "alphaText": "d"
             },
             {
               "text": "家",
-              "soundPath": "sound/gaa1.mp3",
+              "soundPath": ["sound/gaa1.mp3"],
               "alphaText": "g"
             }
           ]
@@ -40,22 +41,141 @@
           "soundElements": [
             {
               "text": "拍",
-              "soundPath": "sound/paak3.mp3",
+              "soundPath": ["sound/paak3.mp3"],
               "alphaText": "p"
             },
             {
               "text": "土",
-              "soundPath": "sound/tou2.mp3",
+              "soundPath": ["sound/tou2.mp3"],
               "alphaText": "t"
             },
             {
               "text": "卡",
-              "soundPath": "sound/kaa1.mp3",
+              "soundPath": ["sound/kaa1.mp3"],
               "alphaText": "k"
             }
           ]
         }
       ]
+    },
+    { 
+      "viewTitle": "練習",
+      "route" : "/module1-5",
+      "matched": {
+      "得": false,
+      "他": false,
+      "聽": false,
+      "地": false,
+      "道": false,
+      "土": false
+      },
+      "alphaText" : ["d", "t"],
+      "literalSections": [
+        {
+          "description": "練習"
+        },
+        {
+          "description": "請將下面的單字與相應的聲母配對"
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "得",
+              "soundPath": ["sound/dak1.mp3"],
+              "alphaText": "d"
+            },
+            {
+              "text": "他",
+              "soundPath": ["sound/taa1.mp3"],
+              "alphaText": "t"
+            },
+            {
+              "text": "聽",
+              "soundPath": ["sound/teng1.mp3"],
+              "alphaText": "t"
+            },
+            {
+              "text": "地",
+              "soundPath": ["sound/dei6.mp3"],
+              "alphaText": "d"
+            },
+            {
+              "text": "道",
+              "soundPath": ["sound/dou6.mp3"],
+              "alphaText": "d"
+            },
+            {
+              "text": "土",
+              "soundPath": ["sound/tou2.mp3"],
+              "alphaText": "t"
+            }
+          ]
+        }
+     
+      ]
+    },
+    { 
+      "viewTitle": "小試牛刀",
+      "route" : "/module1-6",
+      "draggables": ["b", "p", "d", "t", "g", "k"],
+      "correctAnswer" : ["p", "g"],
+      "literalSections": [
+        {
+          "description": "小試牛刀"
+        },
+        {
+          "description": "根據下面的對話，將對應的聲母拖至相應方格"
+        },
+        {
+          "description": "你今日食咗啲乜嘢？"
+        },
+        {
+          "description": "我今日食咗蘋果"
+        },
+        {
+          "description": "蘋果"
+        },
+        {
+          "description": "ing"
+        },
+        {
+          "description": "wo"
+        }
+      ]
+
+
+    },
+    { 
+      "viewTitle": "多項選擇題",
+      "route" : "/module1-6",
+      "options": ["d", "k", "b", "t"],
+      "correctAnswer" : 0,
+      "literalSections": [
+       
+        {
+          "description": "根據下面的對話，將選出對應的聲母"
+
+        },
+        { "description": "冬"
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "八",
+              "soundPath": ["sound/baat3.mp3"],
+              "alphaText": "b"
+            }
+          ]
+        }
+      ],
+      "soundPath":["sound/dung1.mp3"],
+      "word": "冬"
+
+
     }
   ]
 }

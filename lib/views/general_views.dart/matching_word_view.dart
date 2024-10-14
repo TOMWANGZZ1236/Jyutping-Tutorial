@@ -1,22 +1,26 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
+import 'package:testapp/interface/interface_p2.dart';
+import 'package:testapp/interface/interface_p3.dart' as p3;
+import 'package:testapp/interface/lesson_interface.dart';
+import 'package:testapp/views/general_views.dart/dialogue_view.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
 class MatchingGame extends StatefulWidget {
-  final Map<String, String> wordSound;
-  final Map<String, String> words;
-  final Map<String, bool> matched;
-  final List<String> letters;
+  final LessonView2 view;
+  final String introTitle;
   final String route;
+  final Map<String, dynamic> matched;
+  final List<dynamic> alphaText;
 
   const MatchingGame({
     super.key,
-    required this.wordSound,
-    required this.words,
-    required this.matched,
-    required this.letters,
     required this.route,
+    required this.view,
+    required this.introTitle,
+    required this.matched,
+    required this.alphaText,
   });
 
   @override
@@ -24,18 +28,28 @@ class MatchingGame extends StatefulWidget {
 }
 
 class _MatchingGameState extends State<MatchingGame> {
+  late final List<LiteralSection> literalSections;
+  late final List<SoundSection> soundSections;
   final player = AudioPlayer();
 
   String? selectedWord;
+  String? checkingWord;
   String? selectedLetter;
   bool allMatched = false;
 
+  @override
+  initState() {
+    literalSections = widget.view.literalSections;
+    soundSections = widget.view.soundSections;
+    super.initState();
+  }
+
   void checkMatch() {
-    if (selectedWord != null && selectedLetter != null) {
-      if (widget.words[selectedWord] == selectedLetter) {
+    if (checkingWord != null && selectedLetter != null) {
+      if (checkingWord == selectedLetter) {
         setState(() {
           widget.matched[selectedWord!] = true;
-          selectedWord = null;
+          checkingWord = null;
           selectedLetter = null;
         });
       } else {
@@ -59,7 +73,11 @@ class _MatchingGameState extends State<MatchingGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('練習'),
+        title: Text(widget.introTitle,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(fontWeight: FontWeight.bold)),
         actions: <Widget>[
           CustomExitIconButton(
             context: context,
@@ -68,8 +86,8 @@ class _MatchingGameState extends State<MatchingGame> {
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 20),
-          Text('請將下面的單字與相應的聲母配對',
+          const SizedBox(height: 20),
+          Text(literalSections[1].description,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
@@ -80,22 +98,31 @@ class _MatchingGameState extends State<MatchingGame> {
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: widget.words.keys.map((word) {
+                children: soundSections[0]
+                    .soundElements
+                    .asMap()
+                    .entries
+                    .map((soundElement) {
                   return Column(
                     children: [
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedWord = word;
+                            selectedWord = soundElement.value.text;
+                            checkingWord = soundElement.value.alphaText;
                             selectedLetter = null;
-                            player.play(AssetSource((widget.wordSound[word])!));
+                            for (String soundPathItem
+                                in soundElement.value.soundPath) {
+                              player.play(AssetSource(soundPathItem));
+                            }
+
                             checkMatch();
                           });
                         },
                         child: Container(
                           padding: EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: selectedWord == word
+                            color: selectedWord == soundElement.value.text
                                 ? lightBlueColor
                                 : lightGreyColor,
                             border: Border.all(color: blackColor),
@@ -103,13 +130,13 @@ class _MatchingGameState extends State<MatchingGame> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text(word,
+                              Text(soundElement.value.text,
                                   style: Theme.of(context).textTheme.bodyLarge),
                               SizedBox(
                                 // Reserve space for the tick animation
                                 width: 20,
                                 height: 20,
-                                child: widget.matched[word]!
+                                child: widget.matched[soundElement.value.text]
                                     ? const Icon(Icons.check, color: greenColor)
                                     : const SizedBox(width: 10),
                               ),
@@ -124,25 +151,27 @@ class _MatchingGameState extends State<MatchingGame> {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: widget.letters.map((letter) {
+                children: widget.view.alphaText.map((alphaText) {
                   return Column(
                     children: [
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedLetter = letter;
+                            selectedLetter = alphaText;
                             checkMatch();
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.all(8),
+                          width: 40,
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: selectedLetter == letter
+                            color: selectedLetter == alphaText
                                 ? lightBlueColor
                                 : lightGreyColor,
                             border: Border.all(color: blackColor),
                           ),
-                          child: Text(letter,
+                          child: Text(alphaText,
                               style: Theme.of(context).textTheme.bodyLarge),
                         ),
                       ),
@@ -153,11 +182,27 @@ class _MatchingGameState extends State<MatchingGame> {
               ),
             ],
           ),
-          if (allMatched) SizedBox(height: 20),
           if (allMatched)
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, widget.route);
+              onPressed: () async {
+                Lesson lesson = await loadLesson('assets/jsons/lesson1.json');
+                p3.LessonView3 lesson1View3 = lesson.views[2];
+                String lesson1Title = lesson1View3.viewTitle;
+                String route = lesson1View3.route;
+                List<dynamic> draggables = lesson1View3.draggables;
+                List<dynamic> correctAnswer = lesson1View3.correctAnswer;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FillInTheBlanks(
+                      view: lesson1View3,
+                      introTitle: lesson1Title,
+                      route: route,
+                      draggables: draggables,
+                      correctAnswer: correctAnswer,
+                    ),
+                  ),
+                );
               },
               child: const Text(
                 '繼續',

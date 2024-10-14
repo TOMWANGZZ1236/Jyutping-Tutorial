@@ -1,0 +1,64 @@
+{
+  "lessonTitle": "第二堂：z,c,s 聲母",
+  "views": [
+    {
+      "literalSections": [
+        {
+          "description": "\n➡️z,c,s是廣東話中非常常見的聲母\n"
+        },
+        {
+          "description": "請跟著下面的發音，感受一下z,c,s的發音"
+        },
+        {
+          "description": ""
+        },
+        {
+          "description": ""
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "姐姐",
+              "soundPath": ["sound/ze4.mp3", "sound/ze1.mp3"],
+              "alphaText": "z"
+            },
+            {
+              "text": "青春",
+              "soundPath": ["sound/cing1.mp3", "sound/ceon1.mp3"],
+              "alphaText": "c"
+            },
+            {
+              "text": "瑞士",
+              "soundPath": ["sound/seoi6.mp3", "sound/si6.mp3"],
+              "alphaText": "s"
+            }
+          
+          ]
+        },
+     
+       
+        {
+          "soundElements": [
+            {
+              "text": "朝早",
+             "soundPath": ["sound/ziu1.mp3", "sound/zou2.mp3"],
+              "alphaText": "z"
+            },
+            {
+              "text": "茶匙",
+              "soundPath": ["sound/caa4.mp3", "sound/ci4.mp3"],
+              "alphaText": "c"
+            },
+            {
+              "text": "叔叔",
+             "soundPath": ["sound/suk1.mp3", "sound/suk1.mp3"],
+              "alphaText": "s"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/interface/json_interface.dart';
+import 'package:testapp/interface/interface_p1.dart';
 import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
-class AspiratedInitials extends StatefulWidget {
+class InitialConsonant extends StatefulWidget {
   final LessonView view;
   final String introTitle;
-  const AspiratedInitials(
+  const InitialConsonant(
       {super.key, required this.view, required this.introTitle});
 
   @override
-  State<AspiratedInitials> createState() => _AspiratedInitialsState();
+  State<InitialConsonant> createState() => _InitialConsonantState();
 }
 
-class _AspiratedInitialsState extends State<AspiratedInitials> {
+class _InitialConsonantState extends State<InitialConsonant> {
   late final List<LiteralSection> literalSections;
   late final List<SoundSection> soundSections;
   late final List<bool> checkboxStates2;

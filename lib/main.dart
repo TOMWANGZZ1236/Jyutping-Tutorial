@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
 import 'package:testapp/home_page_view.dart';
 import 'package:testapp/predefined.dart';
-import 'package:testapp/views/module1_views.dart/aspirated_view.dart';
-import 'package:testapp/views/general_views.dart/matching_word_view.dart';
 import 'package:testapp/views/general_views.dart/congrats_view.dart';
 import 'package:testapp/views/general_views.dart/dialogue_view.dart';
 import 'package:testapp/views/introduction_views.dart/syllabus_view.dart';
-import 'package:testapp/views/general_views.dart/mcquestions_view.dart';
 
 late final ThemeData lightTheme;
 late final ThemeData darkTheme;
@@ -155,32 +152,22 @@ class _MyAppState extends State<MyApp> {
         theme: lightTheme,
         darkTheme: darkTheme,
         home: const MyHomePage(title: '粵拼教學'),
-        // home: const FillInTheBlanks(
-        //   text1: '你今日食咗啲乜嘢？',
-        //   text2: '我今日食咗蘋果',
-        //   draggables: ['b', 'p', 'd', 't', 'g', 'k'],
-        //   text3: '蘋果',
-        //   text4: 'ing',
-        //   correctAnswer: ['p', 'g'],
-        //   text5: 'wo',
-        //   imageAddress: 'assets/images/apple.webp',
-        //   route: '/module1-6',
-        // ),
+        // home: mc1,
         routes: {
           '/syllabus-route': (context) => const SyllabusPage(),
           // '/module1-1': (context) => const AspiratedInitials(),
-          '/module1-2': (context) => matchingGameBP,
-          '/module1-3': (context) => matchingGameDT,
-          '/module1-4': (context) => matchingGameGK,
-          '/module1-5': (context) => dialogue1,
-          '/module1-6': (context) => dialogue2,
-          '/module1-7': (context) => dialogue3,
-          '/module1-8': (context) => mc1,
-          '/module1-9': (context) => mc2,
-          '/module1-10': (context) => mc3,
-          '/module1-11': (context) => mc4,
-          '/module1-12': (context) => mc5,
-          '/module1-13': (context) => mc6,
+          // '/module1-2': (context) => matchingGameBP,
+          // '/module1-3': (context) => matchingGameDT,
+          // '/module1-4': (context) => matchingGameGK,
+          // '/module1-5': (context) => dialogue1,
+          // '/module1-6': (context) => dialogue2,
+          // '/module1-7': (context) => dialogue3,
+          // '/module1-8': (context) => mc1,
+          // '/module1-9': (context) => mc2,
+          // '/module1-10': (context) => mc3,
+          // '/module1-11': (context) => mc4,
+          // '/module1-12': (context) => mc5,
+          // '/module1-13': (context) => mc6,
           '/module1-14': (context) => CelebrationPage(),
         });
   }

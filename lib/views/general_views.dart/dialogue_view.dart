@@ -1,38 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
+import 'package:testapp/interface/interface_p3.dart';
+import 'package:testapp/interface/interface_p4.dart' hide LiteralSection;
+import 'package:testapp/interface/lesson_interface.dart';
 import 'package:testapp/utilities_functions.dart/highlight_text.dart';
+import 'package:testapp/views/general_views.dart/mcquestions_view.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
 class FillInTheBlanks extends StatefulWidget {
-  final String text1;
-  final String text2;
-  final List<String> draggables;
-  final String text3;
-  final String text4;
-  final List<String> correctAnswer;
-  final String text5;
-  final String imageAddress;
+  final LessonView3 view;
+  final String introTitle;
   final String route;
-
+  final List<dynamic> draggables;
+  final List<dynamic> correctAnswer;
   const FillInTheBlanks(
       {super.key,
-      required this.text1,
-      required this.text2,
       required this.draggables,
-      required this.text3,
-      required this.text4,
-      required this.correctAnswer,
-      required this.text5,
-      required this.imageAddress,
-      required this.route});
+      required this.route,
+      required this.view,
+      required this.introTitle,
+      required this.correctAnswer});
   @override
   _FillInTheBlanksState createState() => _FillInTheBlanksState();
 }
 
 class _FillInTheBlanksState extends State<FillInTheBlanks> {
+  late final List<LiteralSection> literalSections;
   String? firstBlank;
   String? secondBlank;
   bool exerciseCompleted = false;
+
+  @override
+  initState() {
+    literalSections = widget.view.literalSections;
+    super.initState();
+  }
 
   void checkCompletion() {
     if (firstBlank == widget.correctAnswer[0] &&
@@ -47,7 +49,11 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("小試牛刀"),
+        title: Text(widget.introTitle,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(fontWeight: FontWeight.bold)),
         actions: <Widget>[
           CustomExitIconButton(
             context: context,
@@ -60,66 +66,70 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
           Padding(
             padding: const EdgeInsets.all(14.0),
             child: Text(
-              "根據下面的對話，將對應的聲母拖至相應方格",
+              literalSections[1].description,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
 
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Character image
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: const Icon(
-                  Icons
-                      .account_circle, // Replace with Image.asset if you have a custom image
-                  size: 40,
-                  color: greenColor,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Character image
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  child: const Icon(
+                    Icons
+                        .account_circle, // Replace with Image.asset if you have a custom image
+                    size: 40,
+                    color: greenColor,
+                  ),
                 ),
-              ),
 
-              // Dialogue in a speech bubble
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 13),
-                    decoration: BoxDecoration(
-                      color: greenColorDialogue,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      widget.text1,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                // Dialogue in a speech bubble
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 4, horizontal: 13),
+                      decoration: BoxDecoration(
+                        color: greenColorDialogue,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        literalSections[2].description,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: AspectRatio(
-                aspectRatio: 16 / 9, // Aspect ratio of the image
-                child: Image.asset(
-                  widget.imageAddress,
-                  fit: BoxFit
-                      .cover, // This will cover the area of the aspect ratio box
-                ),
-              ),
+              ],
             ),
           ),
+
+          // Flexible(
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(16.0),
+          //     child: AspectRatio(
+          //       aspectRatio: 16 / 9, // Aspect ratio of the image
+          //       child: Image.asset(
+          //         widget.imageAddress,
+          //         fit: BoxFit
+          //             .cover, // This will cover the area of the aspect ratio box
+          //       ),
+          //     ),
+          //   ),
+          // ),
 
           // Fill in the blanks sentence
           Row(
@@ -146,8 +156,8 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
                       ],
                     ),
                     child: HighlightTextWidget(
-                      parent: widget.text2,
-                      highlight: widget.text3,
+                      parent: literalSections[3].description,
+                      highlight: literalSections[4].description,
                     ),
                   ),
                 ),
@@ -170,7 +180,7 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(vertical: 40.0),
                     child: RichText(
                       text: TextSpan(
                         children: [
@@ -181,7 +191,7 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
                           WidgetSpan(
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 9.0),
-                              child: Text(widget.text4),
+                              child: Text(literalSections[5].description),
                             ),
                           ),
                           WidgetSpan(
@@ -191,7 +201,7 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
                           WidgetSpan(
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 9.0),
-                              child: Text(widget.text5),
+                              child: Text(literalSections[6].description),
                             ),
                           ),
                         ],
@@ -216,13 +226,36 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
               SizedBox(height: 20),
               if (exerciseCompleted)
                 Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, widget.route);
-                    },
-                    child: const Text(
-                      '繼續',
+                  padding: const EdgeInsets.only(top: 18),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        Lesson lesson =
+                            await loadLesson('assets/jsons/lesson1.json');
+                        LessonView4 lesson1View4 = lesson.views[3];
+                        String lesson1Title = lesson1View4.viewTitle;
+                        String route = lesson1View4.route;
+                        List soundPath = lesson1View4.soundPath;
+                        int correctIndex = lesson1View4.correctAnswer;
+                        List<dynamic> options = lesson1View4.options;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MultipleChoice(
+                              view: lesson1View4,
+                              viewTitle: lesson1Title,
+                              route: route,
+                              correctIndex: correctIndex,
+                              soundPath: soundPath,
+                              options: options,
+                            ),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        '繼續',
+                      ),
                     ),
                   ),
                 ),

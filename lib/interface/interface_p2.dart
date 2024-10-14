@@ -1,33 +1,21 @@
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
-
-class Lesson {
-  final String lessonTitle;
-  final List<LessonView> views;
-
-  Lesson({required this.lessonTitle, required this.views});
-
-  factory Lesson.fromJson(Map<String, dynamic> json) {
-    //viewsJson is list of maps
-    String lessonTitle = json['lessonTitle'];
-    List<dynamic> viewsJson = json['views'];
-
-    List<LessonView> views =
-        viewsJson.map((view) => LessonView.fromJson(view)).toList();
-
-    return Lesson(
-      lessonTitle: lessonTitle,
-      views: views,
-    );
-  }
-}
-
-class LessonView {
+class LessonView2 {
   final List<LiteralSection> literalSections;
   final List<SoundSection> soundSections;
-  LessonView({required this.literalSections, required this.soundSections});
+  final Map<String, dynamic> matched;
+  final String route;
+  final String viewTitle;
+  final List<dynamic> alphaText;
 
-  factory LessonView.fromJson(Map<String, dynamic> json) {
+  LessonView2({
+    required this.alphaText,
+    required this.route,
+    required this.viewTitle,
+    required this.matched,
+    required this.literalSections,
+    required this.soundSections,
+  });
+
+  factory LessonView2.fromJson(Map<String, dynamic> json) {
     List<dynamic> literalSectionsJson = json['literalSections'];
     List<LiteralSection> literalSections = literalSectionsJson
         .map((section) => LiteralSection.fromJson(section))
@@ -37,10 +25,17 @@ class LessonView {
     List<SoundSection> soundSections = soundSectionsJson
         .map((section) => SoundSection.fromJson(section))
         .toList();
-
-    return LessonView(
+    Map<String, dynamic> matched = json['matched'];
+    String route = json["route"].toString();
+    String viewTitle = json["viewTitle"].toString();
+    List<dynamic> alphaText = json["alphaText"];
+    return LessonView2(
       literalSections: literalSections,
       soundSections: soundSections,
+      matched: matched,
+      route: route,
+      viewTitle: viewTitle,
+      alphaText: alphaText,
     );
   }
 }
@@ -73,7 +68,7 @@ class SoundSection {
 
 class SoundElement {
   final String text;
-  final String soundPath;
+  final List<dynamic> soundPath;
   final String alphaText;
 
   SoundElement(
@@ -81,7 +76,7 @@ class SoundElement {
 
   factory SoundElement.fromJson(Map<String, dynamic> json) {
     String text = json['text'];
-    String soundPath = json['soundPath'];
+    List<dynamic> soundPath = json['soundPath'];
     String alphaText = json['alphaText'];
 
     return SoundElement(
@@ -90,13 +85,4 @@ class SoundElement {
       alphaText: alphaText,
     );
   }
-}
-
-Future<Lesson> loadLesson() async {
-  //Get the asset/data.json as string
-  String data = await rootBundle.loadString('assets/jsons/lesson1.json');
-
-  //Convert String into Dart
-  final jsonResult = jsonDecode(data);
-  return Lesson.fromJson(jsonResult);
 }

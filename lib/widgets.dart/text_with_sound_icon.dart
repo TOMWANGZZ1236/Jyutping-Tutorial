@@ -4,7 +4,7 @@ import 'package:testapp/constants/theme_constants.dart';
 
 class TextWithSoundIcon extends StatefulWidget {
   final String text;
-  final String soundPath;
+  final List soundPath;
   final String? alphaText;
   final double width;
   final double height;
@@ -44,7 +44,11 @@ class _TextWithSoundIconState extends State<TextWithSoundIcon> {
   }
 
   void playSound() async {
-    player.play(AssetSource(widget.soundPath));
+    for (String soundPathItem in widget.soundPath) {
+      player.play(AssetSource(soundPathItem));
+      await player.onPlayerComplete.first;
+    }
+
     setState(() {
       isSoundPlayed = true;
       widget.onActivated(true);
