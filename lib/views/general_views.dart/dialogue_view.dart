@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
-import 'package:testapp/interface/interface_p3.dart';
-import 'package:testapp/interface/interface_p4.dart' hide LiteralSection;
+import 'package:testapp/interface/dragdrop_interface.dart';
+import 'package:testapp/interface/multiplechoice_interface.dart'
+    hide LiteralSection;
 import 'package:testapp/interface/lesson_interface.dart';
 import 'package:testapp/utilities_functions.dart/highlight_text.dart';
 import 'package:testapp/views/general_views.dart/mcquestions_view.dart';

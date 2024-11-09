@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
 import 'package:testapp/home_page_view.dart';
+import 'package:testapp/load_lessons.dart';
 import 'package:testapp/views/general_views.dart/congrats_view.dart';
 import 'package:testapp/views/introduction_views.dart/syllabus_view.dart';
 
 late final ThemeData lightTheme;
 late final ThemeData darkTheme;
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  List<dynamic> lessons = await loadLessons('assets/jsons/lesson1.json');
+  runApp(MyApp(lessons: lessons));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  final List<dynamic> lessons;
+  const MyApp({super.key, required this.lessons});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -153,10 +156,10 @@ class _MyAppState extends State<MyApp> {
         // home: mc1,
         routes: {
           '/syllabus-route': (context) => const SyllabusPage(),
-          // '/module1-1': (context) => const AspiratedInitials(),
-          // '/module1-2': (context) => matchingGameBP,
-          // '/module1-3': (context) => matchingGameDT,
-          // '/module1-4': (context) => matchingGameGK,
+          '/module1-1': (context) => widget.lessons[0],
+          '/module1-2': (context) => widget.lessons[1],
+          '/module1-3': (context) => widget.lessons[2],
+          '/module1-4': (context) => widget.lessons[3],
           // '/module1-5': (context) => dialogue1,
           // '/module1-6': (context) => dialogue2,
           // '/module1-7': (context) => dialogue3,

@@ -1,14 +1,14 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/constants/theme_constants.dart';
-import 'package:testapp/interface/interface_p2.dart';
-import 'package:testapp/interface/interface_p3.dart' as p3;
+import 'package:testapp/interface/matching_interface.dart';
+import 'package:testapp/interface/dragdrop_interface.dart' as p3;
 import 'package:testapp/interface/lesson_interface.dart';
 import 'package:testapp/views/general_views.dart/dialogue_view.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 
 class MatchingGame extends StatefulWidget {
-  final LessonView2 view;
+  final MatchingView view;
   final String introTitle;
   final String route;
   final Map<String, dynamic> matched;
@@ -87,7 +87,7 @@ class _MatchingGameState extends State<MatchingGame> {
       body: Column(
         children: <Widget>[
           const SizedBox(height: 20),
-          Text(literalSections[1].description,
+          Text(literalSections[0].description,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!

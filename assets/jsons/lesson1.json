@@ -59,8 +59,63 @@
       ]
     },
     { 
-      "viewTitle": "練習",
-      "route" : "/module1-5",
+      "viewTitle": "配对練習1",
+      "route" : "/module1-3",
+      "matched": {
+      "爸": false,
+      "爬": false,
+      "怕": false,
+      "白": false,
+      "婆": false,
+      "布": false
+      },
+      "alphaText" : ["b", "p"],
+      "literalSections": [
+        {
+          "description": "請將下面的單字與相應的聲母配對"
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "爸",
+              "soundPath": ["sound/baa4.mp3"],
+              "alphaText": "b"
+            },
+            {
+              "text": "爬",
+              "soundPath": ["sound/paa4.mp3"],
+              "alphaText": "p"
+            },
+            {
+              "text": "怕",
+              "soundPath": ["sound/paa3.mp3"],
+              "alphaText": "p"
+            },
+            {
+              "text": "白",
+              "soundPath": ["sound/baak6.mp3"],
+              "alphaText": "b"
+            },
+            {
+              "text": "婆",
+              "soundPath": ["sound/po4.mp3"],
+              "alphaText": "p"
+            },
+            {
+              "text": "布",
+              "soundPath": ["sound/bou3.mp3"],
+              "alphaText": "b"
+            }
+          ]
+        }
+     
+      ]
+    },
+    { 
+      "viewTitle": "配对練習2",
+      "route" : "/module1-4",
       "matched": {
       "得": false,
       "他": false,
@@ -110,6 +165,64 @@
               "text": "土",
               "soundPath": ["sound/tou2.mp3"],
               "alphaText": "t"
+            }
+          ]
+        }
+     
+      ]
+    },
+    { 
+      "viewTitle": "配对練習3",
+      "route" : "/module1-5",
+      "matched": {
+      "家": false,
+      "期": false,
+      "古": false,
+      "假": false,
+      "琴": false,
+      "球": false
+      },
+      "alphaText" : ["G", "K"],
+      "literalSections": [
+        {
+          "description": "練習"
+        },
+        {
+          "description": "請將下面的單字與相應的聲母配對"
+        }
+      ],
+      "soundSections": [
+        {
+          "soundElements": [
+            {
+              "text": "家",
+              "soundPath": ["sound/dak1.mp3"],
+              "alphaText": "G"
+            },
+            {
+              "text": "期",
+              "soundPath": ["sound/taa1.mp3"],
+              "alphaText": "K"
+            },
+            {
+              "text": "古",
+              "soundPath": ["sound/teng1.mp3"],
+              "alphaText": "G"
+            },
+            {
+              "text": "假",
+              "soundPath": ["sound/dei6.mp3"],
+              "alphaText": "G"
+            },
+            {
+              "text": "琴",
+              "soundPath": ["sound/dou6.mp3"],
+              "alphaText": "K"
+            },
+            {
+              "text": "球",
+              "soundPath": ["sound/tou2.mp3"],
+              "alphaText": "K"
             }
           ]
         }

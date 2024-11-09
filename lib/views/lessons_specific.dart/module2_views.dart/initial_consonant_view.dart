@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/interface/interface_p1.dart';
+import 'package:testapp/interface/tutorial_interface.dart';
 import 'package:testapp/widgets.dart/text_with_sound_icon.dart';
 import 'package:testapp/widgets.dart/back_main.dart';
 

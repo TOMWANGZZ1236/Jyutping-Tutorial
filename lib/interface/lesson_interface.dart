@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:testapp/interface/interface_p1.dart';
-import 'package:testapp/interface/interface_p2.dart';
-import 'package:testapp/interface/interface_p3.dart';
-import 'package:testapp/interface/interface_p4.dart';
+import 'package:testapp/interface/tutorial_interface.dart';
+import 'package:testapp/interface/matching_interface.dart';
+import 'package:testapp/interface/dragdrop_interface.dart';
+import 'package:testapp/interface/multiplechoice_interface.dart';
 
 class Lesson {
   final List<dynamic> views;
@@ -16,9 +16,11 @@ class Lesson {
 
     List<dynamic> views = [
       LessonView.fromJson(viewsJson[0]),
-      LessonView2.fromJson(viewsJson[1]),
-      LessonView3.fromJson(viewsJson[2]),
-      LessonView4.fromJson(viewsJson[3])
+      MatchingView.fromJson(viewsJson[1]),
+      MatchingView.fromJson(viewsJson[2]),
+      MatchingView.fromJson(viewsJson[3]),
+      LessonView3.fromJson(viewsJson[4]),
+      LessonView4.fromJson(viewsJson[5])
     ];
 
     return Lesson(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/interface/interface_p1.dart';
-import 'package:testapp/interface/interface_p2.dart'
+import 'package:testapp/interface/tutorial_interface.dart';
+import 'package:testapp/interface/matching_interface.dart'
     hide LiteralSection, SoundSection;
 import 'package:testapp/interface/lesson_interface.dart';
 import 'package:testapp/views/general_views.dart/matching_word_view.dart';
@@ -138,18 +138,17 @@ class _AspiratedInitialsState extends State<AspiratedInitials> {
               ElevatedButton(
                 onPressed: () async {
                   Lesson lesson = await loadLesson('assets/jsons/lesson1.json');
-                  LessonView2 lesson1View2 = lesson.views[1];
-                  String lesson1Title = lesson1View2.viewTitle;
+                  MatchingView lesson1View2 = lesson.views[1];
+                  String lesson1View2Title = lesson1View2.viewTitle;
                   String route = lesson1View2.route;
                   Map<String, dynamic> matched = lesson1View2.matched;
                   List<dynamic> alphaText = lesson1View2.alphaText;
-                  print(lesson1Title);
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => MatchingGame(
                         view: lesson1View2,
-                        introTitle: lesson1Title,
+                        introTitle: lesson1View2Title,
                         route: route,
                         matched: matched,
                         alphaText: alphaText,

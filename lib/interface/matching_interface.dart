@@ -1,4 +1,4 @@
-class LessonView2 {
+class MatchingView {
   final List<LiteralSection> literalSections;
   final List<SoundSection> soundSections;
   final Map<String, dynamic> matched;
@@ -6,7 +6,7 @@ class LessonView2 {
   final String viewTitle;
   final List<dynamic> alphaText;
 
-  LessonView2({
+  MatchingView({
     required this.alphaText,
     required this.route,
     required this.viewTitle,
@@ -15,7 +15,7 @@ class LessonView2 {
     required this.soundSections,
   });
 
-  factory LessonView2.fromJson(Map<String, dynamic> json) {
+  factory MatchingView.fromJson(Map<String, dynamic> json) {
     List<dynamic> literalSectionsJson = json['literalSections'];
     List<LiteralSection> literalSections = literalSectionsJson
         .map((section) => LiteralSection.fromJson(section))
@@ -29,7 +29,7 @@ class LessonView2 {
     String route = json["route"].toString();
     String viewTitle = json["viewTitle"].toString();
     List<dynamic> alphaText = json["alphaText"];
-    return LessonView2(
+    return MatchingView(
       literalSections: literalSections,
       soundSections: soundSections,
       matched: matched,
