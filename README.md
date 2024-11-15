@@ -37,7 +37,7 @@ Here’s a glimpse into the application's functionality and user interface:
   <img src="/assets/images/mc.png" alt="Multiple Choice" width="300">
 </p>
 
-## Quick Video Demo (WITH SOUND🎧)!
+## Quick Video Demo (WITH SOUND🎧!)
 https://github.com/user-attachments/assets/2359cbe3-f734-44ef-8ae1-d7468ed46386
 ## How to Run
 
