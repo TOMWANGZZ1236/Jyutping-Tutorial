@@ -39,14 +39,7 @@ Here’s a glimpse into the application's functionality and user interface:
 
 ## Quick Video Demo
 
-Click the YouTube icon below to watch the quick demo video:
-
-<p align="center">
-  <a href="/assets/videos/demo.mp4">
-    <img src="/assets/images/youtube.png" alt="YouTube Video Link" width="120">
-  </a>
-</p>
-
+https://github.com/TOMWANGZZ1236/Jyutping-Tutorial/blob/main/assets/videos/demo.mp4
 ## How to Run
 
 To clone and run this application, you'll need Git and Flutter installed on your computer. From your command line:
