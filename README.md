@@ -2,12 +2,11 @@
 
 ## Project Description
 
-This project enhances the Word.hk app by introducing a Duolingo-style tutorial feature focused on Cantonese romanization. Designed to provide an interactive and engaging learning experience, this feature includes a responsive frontend tailored for both iOS and Android platforms. The tutorial incorporates gamified elements with four phonetics-based games, making the learning process both fun and educational.
+This project enhances the Word.hk app by introducing a Duolingo-style tutorial feature focused on Cantonese romanization. Designed to provide an interactive and engaging learning experience, this feature includes a responsive frontend tailored for both iOS and Android platforms. The tutorial incorporates gamified elements with four phonetics-based exercises, making the learning process both fun and educational.
 
 ### Tech Stack
 
 - **Flutter**: For crafting a responsive and interactive mobile UI.
-- **iOS & Android Platforms**: Ensuring compatibility and performance across multiple devices.
 
 ## Demo
 
