@@ -1,4 +1,4 @@
-# Duolingo-Style Cantonese Romanization Tutorial for Word.hk
+# Duolingo-Style Cantonese Romanization Tutorial
 
 ## Project Description
 
