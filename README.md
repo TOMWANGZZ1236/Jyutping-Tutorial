@@ -41,7 +41,7 @@ Here’s a glimpse into the application's functionality and user interface:
 
 For a quick walkthrough of one chapter, click on the thumbnail below to watch the video:
 
-[View Video](/assets/videos/demo.mp4)
+[![Watch the Video](/assets/images/dragDropGame.png)](https://www.youtube.com/shorts/DBEAa0NQQ34)
 
 ## How to Run
 
