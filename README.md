@@ -42,8 +42,8 @@ Here’s a glimpse into the application's functionality and user interface:
 For a quick walkthrough of one chapter, click on the thumbnail below to watch the video:
 
 <p align="center">
-  <a href="/path/to/video.mp4">
-    <img src="/path/to/video_thumbnail.jpg" alt="Video Walkthrough" width="300">
+  <a href="/assets/videos/demo.mp4">
+    <img src="/assets/images/dragDropGame.png" alt="Video Walkthrough" width="300">
   </a>
 </p>
 
