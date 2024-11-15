@@ -38,8 +38,7 @@ Here’s a glimpse into the application's functionality and user interface:
 </p>
 
 ## Quick Video Demo
-
-https://github.com/TOMWANGZZ1236/Jyutping-Tutorial/blob/main/assets/videos/demo.mp4
+https://github.com/user-attachments/assets/2359cbe3-f734-44ef-8ae1-d7468ed46386
 ## How to Run
 
 To clone and run this application, you'll need Git and Flutter installed on your computer. From your command line:
