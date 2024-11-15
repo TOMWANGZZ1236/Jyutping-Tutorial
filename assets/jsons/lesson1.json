@@ -60,7 +60,7 @@
     },
     { 
       "viewTitle": "配对練習1",
-      "route" : "/module1-3",
+      "route" : "/module1-5",
       "matched": {
       "爸": false,
       "爬": false,
@@ -69,7 +69,7 @@
       "婆": false,
       "布": false
       },
-      "alphaText" : ["b", "p"],
+      "alphaText" : ["B", "P"],
       "literalSections": [
         {
           "description": "請將下面的單字與相應的聲母配對"
@@ -81,32 +81,32 @@
             {
               "text": "爸",
               "soundPath": ["sound/baa4.mp3"],
-              "alphaText": "b"
+              "alphaText": "B"
             },
             {
               "text": "爬",
               "soundPath": ["sound/paa4.mp3"],
-              "alphaText": "p"
+              "alphaText": "P"
             },
             {
               "text": "怕",
               "soundPath": ["sound/paa3.mp3"],
-              "alphaText": "p"
+              "alphaText": "P"
             },
             {
               "text": "白",
               "soundPath": ["sound/baak6.mp3"],
-              "alphaText": "b"
+              "alphaText": "B"
             },
             {
               "text": "婆",
               "soundPath": ["sound/po4.mp3"],
-              "alphaText": "p"
+              "alphaText": "P"
             },
             {
               "text": "布",
               "soundPath": ["sound/bou3.mp3"],
-              "alphaText": "b"
+              "alphaText": "B"
             }
           ]
         }
@@ -124,11 +124,8 @@
       "道": false,
       "土": false
       },
-      "alphaText" : ["d", "t"],
+      "alphaText" : ["D", "T"],
       "literalSections": [
-        {
-          "description": "練習"
-        },
         {
           "description": "請將下面的單字與相應的聲母配對"
         }
@@ -139,32 +136,32 @@
             {
               "text": "得",
               "soundPath": ["sound/dak1.mp3"],
-              "alphaText": "d"
+              "alphaText": "D"
             },
             {
               "text": "他",
               "soundPath": ["sound/taa1.mp3"],
-              "alphaText": "t"
+              "alphaText": "T"
             },
             {
               "text": "聽",
               "soundPath": ["sound/teng1.mp3"],
-              "alphaText": "t"
+              "alphaText": "T"
             },
             {
               "text": "地",
               "soundPath": ["sound/dei6.mp3"],
-              "alphaText": "d"
+              "alphaText": "D"
             },
             {
               "text": "道",
               "soundPath": ["sound/dou6.mp3"],
-              "alphaText": "d"
+              "alphaText": "D"
             },
             {
               "text": "土",
               "soundPath": ["sound/tou2.mp3"],
-              "alphaText": "t"
+              "alphaText": "T"
             }
           ]
         }
@@ -185,9 +182,6 @@
       "alphaText" : ["G", "K"],
       "literalSections": [
         {
-          "description": "練習"
-        },
-        {
           "description": "請將下面的單字與相應的聲母配對"
         }
       ],
@@ -196,32 +190,32 @@
           "soundElements": [
             {
               "text": "家",
-              "soundPath": ["sound/dak1.mp3"],
+              "soundPath": ["sound/gaa1.mp3"],
               "alphaText": "G"
             },
             {
               "text": "期",
-              "soundPath": ["sound/taa1.mp3"],
+              "soundPath": ["sound/kei4.mp3"],
               "alphaText": "K"
             },
             {
               "text": "古",
-              "soundPath": ["sound/teng1.mp3"],
+              "soundPath": ["sound/gu2.mp3"],
               "alphaText": "G"
             },
             {
               "text": "假",
-              "soundPath": ["sound/dei6.mp3"],
+              "soundPath": ["sound/gaa2.mp3"],
               "alphaText": "G"
             },
             {
               "text": "琴",
-              "soundPath": ["sound/dou6.mp3"],
+              "soundPath": ["sound/kam4.mp3"],
               "alphaText": "K"
             },
             {
               "text": "球",
-              "soundPath": ["sound/tou2.mp3"],
+              "soundPath": ["sound/kau4.mp3"],
               "alphaText": "K"
             }
           ]
@@ -262,7 +256,7 @@
     },
     { 
       "viewTitle": "多項選擇題",
-      "route" : "/module1-6",
+      "route" : "/module1-7",
       "options": ["d", "k", "b", "t"],
       "correctAnswer" : 0,
       "literalSections": [

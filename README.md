@@ -5,6 +5,7 @@
 This project enhances the Word.hk app by introducing a Duolingo-style tutorial feature focused on Cantonese romanization. Designed to provide an interactive and engaging learning experience, this feature includes a responsive frontend tailored for both iOS and Android platforms. The tutorial incorporates gamified elements with four phonetics-based games, making the learning process both fun and educational.
 
 ### Tech Stack
+
 - **Flutter**: For crafting a responsive and interactive mobile UI.
 - **iOS & Android Platforms**: Ensuring compatibility and performance across multiple devices.
 
@@ -12,34 +13,28 @@ This project enhances the Word.hk app by introducing a Duolingo-style tutorial f
 
 Here’s a glimpse into the application's functionality and user interface:
 
-### Game 1: Matching Sounds
+### Lesson of the Chapter b,d,g,p,t,k 送氣音
+
 <p align="center">
-  <img src="/path/to/game1.jpg" alt="Matching Sounds" width="300">
+  <img src="/assets/images/lesson.png" alt="Lesson of the chapter" width="300">
 </p>
 
-### Game 2: Fill in the Blanks
+### Game 2: Matching Game
+
 <p align="center">
-  <img src="/path/to/game2.jpg" alt="Fill in the Blanks" width="300">
+  <img src="/assets/images/matchinGame.png" alt="Matching Game" width="300">
 </p>
 
-### Game 3: Pronunciation Practice
+### Game 3: Drag and Drop Game
+
 <p align="center">
-  <img src="/path/to/game3.jpg" alt="Pronunciation Practice" width="300">
+  <img src="/assets/images/dargDropGame.png" alt="Drag and Drop Game" width="300">
 </p>
 
-### Game 4: Quick Recall
-<p align="center">
-  <img src="/path/to/game4.jpg" alt="Quick Recall" width="300">
-</p>
+### Game 4: Multiple Choice
 
-### Tutorial Interface
 <p align="center">
-  <img src="/path/to/tutorial_interface.jpg" alt="Tutorial Interface" width="300">
-</p>
-
-### Interactive Lesson
-<p align="center">
-  <img src="/path/to/interactive_lesson.jpg" alt="Interactive Lesson" width="300">
+  <img src="/assets/images/multipleChoice.png" alt="Multiple Choice" width="300">
 </p>
 
 ## Quick Video Demo
@@ -64,3 +59,4 @@ flutter pub get
 
 # Run the app
 flutter run
+```

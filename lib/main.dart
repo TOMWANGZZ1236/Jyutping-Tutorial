@@ -160,8 +160,8 @@ class _MyAppState extends State<MyApp> {
           '/module1-2': (context) => widget.lessons[1],
           '/module1-3': (context) => widget.lessons[2],
           '/module1-4': (context) => widget.lessons[3],
-          // '/module1-5': (context) => dialogue1,
-          // '/module1-6': (context) => dialogue2,
+          '/module1-5': (context) => widget.lessons[4],
+          '/module1-6': (context) => widget.lessons[5],
           // '/module1-7': (context) => dialogue3,
           // '/module1-8': (context) => mc1,
           // '/module1-9': (context) => mc2,
@@ -169,7 +169,7 @@ class _MyAppState extends State<MyApp> {
           // '/module1-11': (context) => mc4,
           // '/module1-12': (context) => mc5,
           // '/module1-13': (context) => mc6,
-          '/module1-14': (context) => CelebrationPage(),
+          '/module1-7': (context) => CelebrationPage(),
         });
   }
 }

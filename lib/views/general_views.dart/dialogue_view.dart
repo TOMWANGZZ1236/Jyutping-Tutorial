@@ -231,28 +231,29 @@ class _FillInTheBlanksState extends State<FillInTheBlanks> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                      onPressed: () async {
-                        Lesson lesson =
-                            await loadLesson('assets/jsons/lesson1.json');
-                        LessonView4 lesson1View4 = lesson.views[3];
-                        String lesson1Title = lesson1View4.viewTitle;
-                        String route = lesson1View4.route;
-                        List soundPath = lesson1View4.soundPath;
-                        int correctIndex = lesson1View4.correctAnswer;
-                        List<dynamic> options = lesson1View4.options;
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MultipleChoice(
-                              view: lesson1View4,
-                              viewTitle: lesson1Title,
-                              route: route,
-                              correctIndex: correctIndex,
-                              soundPath: soundPath,
-                              options: options,
-                            ),
-                          ),
-                        );
+                      onPressed: () {
+                        // Lesson lesson =
+                        //     await loadLesson('assets/jsons/lesson1.json');
+                        // LessonView4 lesson1View4 = lesson.views[3];
+                        // String lesson1Title = lesson1View4.viewTitle;
+                        // String route = lesson1View4.route;
+                        // List soundPath = lesson1View4.soundPath;
+                        // int correctIndex = lesson1View4.correctAnswer;
+                        // List<dynamic> options = lesson1View4.options;
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => MultipleChoice(
+                        //       view: lesson1View4,
+                        //       viewTitle: lesson1Title,
+                        //       route: route,
+                        //       correctIndex: correctIndex,
+                        //       soundPath: soundPath,
+                        //       options: options,
+                        //     ),
+                        //   ),
+                        // );
+                        Navigator.pushNamed(context, widget.route);
                       },
                       child: const Text(
                         '繼續',

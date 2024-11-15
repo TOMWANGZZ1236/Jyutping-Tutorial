@@ -184,25 +184,26 @@ class _MatchingGameState extends State<MatchingGame> {
           ),
           if (allMatched)
             ElevatedButton(
-              onPressed: () async {
-                Lesson lesson = await loadLesson('assets/jsons/lesson1.json');
-                p3.LessonView3 lesson1View3 = lesson.views[2];
-                String lesson1Title = lesson1View3.viewTitle;
-                String route = lesson1View3.route;
-                List<dynamic> draggables = lesson1View3.draggables;
-                List<dynamic> correctAnswer = lesson1View3.correctAnswer;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FillInTheBlanks(
-                      view: lesson1View3,
-                      introTitle: lesson1Title,
-                      route: route,
-                      draggables: draggables,
-                      correctAnswer: correctAnswer,
-                    ),
-                  ),
-                );
+              onPressed: () {
+                // Lesson lesson = await loadLesson('assets/jsons/lesson1.json');
+                // p3.LessonView3 lesson1View3 = lesson.views[2];
+                // String lesson1Title = lesson1View3.viewTitle;
+                // String route = lesson1View3.route;
+                // List<dynamic> draggables = lesson1View3.draggables;
+                // List<dynamic> correctAnswer = lesson1View3.correctAnswer;
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => FillInTheBlanks(
+                //       view: lesson1View3,
+                //       introTitle: lesson1Title,
+                //       route: route,
+                //       draggables: draggables,
+                //       correctAnswer: correctAnswer,
+                //     ),
+                //   ),
+                // );
+                Navigator.pushNamed(context, widget.route);
               },
               child: const Text(
                 '繼續',
