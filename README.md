@@ -22,7 +22,7 @@ Here’s a glimpse into the application's functionality and user interface:
 ### Game 2: Matching Game
 
 <p align="center">
-  <img src="/assets/images/matchinGame.png" alt="Matching Game" width="300">
+  <img src="/assets/images/matchingGame.png" alt="Matching Game" width="300">
 </p>
 
 ### Game 3: Drag and Drop Game
@@ -34,7 +34,7 @@ Here’s a glimpse into the application's functionality and user interface:
 ### Game 4: Multiple Choice
 
 <p align="center">
-  <img src="/assets/images/multipleChoice.png" alt="Multiple Choice" width="300">
+  <img src="/assets/images/mc.png" alt="Multiple Choice" width="300">
 </p>
 
 ## Quick Video Demo
