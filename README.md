@@ -39,11 +39,11 @@ Here’s a glimpse into the application's functionality and user interface:
 
 ## Quick Video Demo
 
-For a quick walkthrough of one chapter, click on the thumbnail below to watch the video:
+Click the YouTube icon below to watch the quick demo video:
 
 <p align="center">
-  <a href="/assets/videos/demo1.mp4">
-    <img src="/assets/images/dragDropGame.png" alt="Video Walkthrough" width="300">
+  <a href="/assets/videos/demo.mp4">
+    <img src="/assets/images/youtube.png" alt="YouTube Video Link" width="120">
   </a>
 </p>
 
