@@ -28,7 +28,7 @@ Here’s a glimpse into the application's functionality and user interface:
 ### Game 3: Drag and Drop Game
 
 <p align="center">
-  <img src="/assets/images/dargDropGame.png" alt="Drag and Drop Game" width="300">
+  <img src="/assets/images/dragDropGame.png" alt="Drag and Drop Game" width="300">
 </p>
 
 ### Game 4: Multiple Choice
@@ -39,9 +39,13 @@ Here’s a glimpse into the application's functionality and user interface:
 
 ## Quick Video Demo
 
-To see the tutorial in action, watch the video walkthrough of one chapter:
+For a quick walkthrough of one chapter, click on the thumbnail below to watch the video:
 
-[Video Walkthrough](/path/to/video.mp4)
+<p align="center">
+  <a href="/path/to/video.mp4">
+    <img src="/path/to/video_thumbnail.jpg" alt="Video Walkthrough" width="300">
+  </a>
+</p>
 
 ## How to Run
 
